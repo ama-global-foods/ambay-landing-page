@@ -1,59 +1,43 @@
 'use client'
 
 import Section from '@/components/ui/Section'
-import { whyAmbayCredentials } from '@/content/products'
+
+const credentials = [
+  { heading: 'Costco-Audited Facility', detail: 'Production that meets the highest retail compliance standards in North America.' },
+  { heading: 'HACCP & GMP Certified', detail: 'End-to-end food safety systems from sourcing to shelf.' },
+  { heading: 'Export Ready', detail: 'Established logistics for Canada, USA, and international markets.' },
+  { heading: 'Scalable Production', detail: 'Capacity to support national rollouts and seasonal velocity.' },
+]
 
 export default function WhyAmbaySection() {
   return (
-    <Section id="about" className="bg-card py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-          {/* Left */}
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              Why Partner With Us
-            </p>
-            <h2 className="mt-4 font-serif text-4xl font-bold leading-tight tracking-tight text-foreground lg:text-5xl">
-              <span className="text-balance">Built for velocity. Designed for margin.</span>
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-muted-foreground lg:text-lg">
-              Ambay is the house brand of AMA Global Foods, headquartered in
-              Surrey, Canada. We combine ancient ingredient sourcing with
-              modern production standards to deliver products that perform
-              on shelf and in margin.
-            </p>
-          </div>
+    <Section id="about" className="bg-background">
+      <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+        <div className="flex flex-col justify-center">
+          <p className="text-xs font-sans uppercase tracking-[0.3em] text-muted-foreground mb-4">
+            Why Ambay
+          </p>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground leading-tight text-balance">
+            Built for velocity. Designed for margin.
+          </h2>
+          <p className="mt-6 text-base md:text-lg leading-relaxed text-muted-foreground max-w-lg">
+            Ambay is the house brand of AMA Global Foods, headquartered in Surrey, 
+            Canada. We combine ancient ingredient sourcing with modern production 
+            standards to deliver products that perform on shelf and in margin.
+          </p>
+        </div>
 
-          {/* Right - Credentials */}
-          <div className="flex flex-col justify-center">
-            <ul className="flex flex-col gap-4">
-              {whyAmbayCredentials.map((credential, index) => (
-                <li
-                  key={index}
-                  className="flex items-center gap-4 rounded-sm border border-border bg-background px-6 py-4 transition-colors duration-200 hover:border-primary/30"
-                >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    className="flex-shrink-0 text-primary"
-                  >
-                    <path
-                      d="M16.667 5L7.5 14.167 3.333 10"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <span className="text-sm font-medium text-secondary-foreground lg:text-base">
-                    {credential}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="flex flex-col gap-8">
+          {credentials.map((item, i) => (
+            <div key={i} className="border-b border-border pb-8 last:border-b-0 last:pb-0">
+              <h3 className="font-serif text-xl md:text-2xl text-foreground">
+                {item.heading}
+              </h3>
+              <p className="mt-2 text-sm md:text-base leading-relaxed text-muted-foreground">
+                {item.detail}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </Section>

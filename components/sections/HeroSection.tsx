@@ -34,7 +34,7 @@ export default function HeroSection() {
                 Explore the Collection
               </Link>
               <Link
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-sm border border-foreground/20 bg-transparent px-8 py-3.5 text-sm font-medium tracking-wide text-foreground transition-colors duration-200 hover:bg-foreground hover:text-background"
               >
                 Wholesale Inquiry

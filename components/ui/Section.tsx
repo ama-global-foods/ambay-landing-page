@@ -5,22 +5,20 @@ import { type ReactNode, useRef, useEffect, useState } from 'react'
 interface SectionProps {
   children: ReactNode
   className?: string
-  fadeIn?: boolean
   id?: string
+  fullWidth?: boolean
 }
 
 export default function Section({
   children,
   className = '',
-  fadeIn = true,
   id,
+  fullWidth = false,
 }: SectionProps) {
   const ref = useRef<HTMLElement>(null)
-  const [isVisible, setIsVisible] = useState(!fadeIn)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    if (!fadeIn) return
-
     const el = ref.current
     if (!el) {
       setIsVisible(true)
@@ -34,25 +32,27 @@ export default function Section({
           observer.unobserve(entry.target)
         }
       },
-      { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
+      { threshold: 0.05, rootMargin: '0px 0px -40px 0px' }
     )
 
     observer.observe(el)
 
-    return () => {
-      observer.disconnect()
-    }
-  }, [fadeIn])
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <section
       ref={ref}
       id={id}
-      className={`transition-all duration-700 ease-out ${
-        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+      className={`py-24 lg:py-32 transition-all duration-700 ease-out ${
+        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       } ${className}`}
     >
-      {children}
+      {fullWidth ? children : (
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          {children}
+        </div>
+      )}
     </section>
   )
 }
