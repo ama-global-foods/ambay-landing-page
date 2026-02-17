@@ -1,39 +1,67 @@
 'use client'
 
-import Button from '@/components/ui/Button'
-import Section from '@/components/ui/Section'
+import Image from 'next/image'
+import Link from 'next/link'
 
 export default function HeroSection() {
   return (
-    <Section className="py-24 lg:py-32">
-      <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
-        {/* Small uppercase line */}
-        <p className="text-xs font-medium uppercase tracking-wider text-gray-500">
-          Wholesale Distribution • Surrey, Canada
-        </p>
+    <section className="relative flex min-h-screen items-center pt-16 lg:pt-20">
+      <div className="mx-auto w-full max-w-7xl px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Content */}
+          <div className="flex flex-col items-start">
+            <p className="animate-fade-in text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+              An ancient superfood, reimagined
+            </p>
 
-        {/* Large headline */}
-        <h1 className="mt-6 text-5xl font-bold leading-tight text-gray-900 lg:text-6xl xl:text-7xl">
-          From Ground to Global.
-        </h1>
+            <h1 className="animate-fade-in-delay-1 mt-6 font-serif text-5xl font-bold leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl xl:text-8xl">
+              <span className="text-balance">Better.</span>
+              <br />
+              <span className="text-balance">Than.</span>
+              <br />
+              <span className="text-balance text-primary">Popcorn.</span>
+            </h1>
 
-        {/* Subtext */}
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600 lg:text-xl">
-          Ambay is the house brand of AMA Global Foods, delivering premium
-          pantry staples and modern snack formats to retailers and foodservice
-          partners.
-        </p>
+            <p className="animate-fade-in-delay-2 mt-8 max-w-md text-lg leading-relaxed text-muted-foreground lg:text-xl">
+              An ancient superfood, popped for modern cravings. Light. Clean. Satisfying.
+            </p>
 
-        {/* CTAs */}
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button href="/products" variant="primary">
-            View Products
-          </Button>
-          <Button href="/contact" variant="outline">
-            Wholesale Inquiry
-          </Button>
+            <div className="animate-fade-in-delay-3 mt-10 flex flex-col gap-4 sm:flex-row">
+              <Link
+                href="#products"
+                className="inline-flex items-center justify-center rounded-sm bg-primary px-8 py-3.5 text-sm font-medium tracking-wide text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
+              >
+                Explore the Collection
+              </Link>
+              <Link
+                href="#contact"
+                className="inline-flex items-center justify-center rounded-sm border border-foreground/20 bg-transparent px-8 py-3.5 text-sm font-medium tracking-wide text-foreground transition-colors duration-200 hover:bg-foreground hover:text-background"
+              >
+                Wholesale Inquiry
+              </Link>
+            </div>
+
+            {/* Trust line */}
+            <p className="animate-fade-in-delay-3 mt-12 text-xs tracking-wide text-muted-foreground">
+              Popped, never fried &middot; Plant-based &middot; Gluten free
+            </p>
+          </div>
+
+          {/* Hero Image */}
+          <div className="animate-fade-in-delay-2 relative">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+              <Image
+                src="/images/makhana-hero.jpg"
+                alt="Ambay Popped Lotus Seeds - premium makhana in a wellness-forward composition"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </Section>
+    </section>
   )
 }

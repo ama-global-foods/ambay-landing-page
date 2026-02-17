@@ -1,37 +1,70 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-warm-cream">
-      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
+    <footer className="border-t border-border bg-card">
+      <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
-          <div className="text-center md:text-left">
-            <p className="text-sm font-semibold text-deep-teal">
-              AMA Global Foods
+          <div>
+            <span className="font-serif text-xl font-bold tracking-tight text-foreground">
+              AMBAY
+            </span>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              A house brand of AMA Global Foods. From ground to global.
             </p>
-            <p className="mt-1 text-xs text-gray-600">Surrey, Canada</p>
-            <p className="mt-2 text-xs text-gray-500">From Ground to Global.</p>
           </div>
 
-          {/* Contact Info */}
-          <div className="text-center md:text-right">
-            <p className="text-xs text-gray-600">
+          {/* Head Office */}
+          <div>
+            <h4 className="text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">
+              Head Office
+            </h4>
+            <p className="mt-3 text-sm leading-relaxed text-foreground">
+              Surrey, BC
+              <br />
+              Canada
+            </p>
+          </div>
+
+          {/* Regional Office */}
+          <div>
+            <h4 className="text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">
+              Regional Office
+            </h4>
+            <p className="mt-3 text-sm leading-relaxed text-foreground">
+              Calgary, AB
+              <br />
+              Canada
+            </p>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">
+              Contact
+            </h4>
+            <div className="mt-3 flex flex-col gap-2">
               <a
                 href="mailto:info@amafoods.ca"
-                className="transition-colors hover:text-deep-teal"
+                className="text-sm text-foreground transition-colors duration-200 hover:text-primary"
               >
                 info@amafoods.ca
               </a>
-            </p>
-            <p className="mt-1 text-xs text-gray-500">
-              Wholesale inquiries welcome
-            </p>
+              <a
+                href="https://amaglobalfoods.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-foreground transition-colors duration-200 hover:text-primary"
+              >
+                amaglobalfoods.com
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="mt-8 border-t border-gray-200 pt-8 text-center">
-          <p className="text-xs text-gray-500">
-            © {new Date().getFullYear()} AMA Global Foods. All rights reserved.
+        {/* Bottom */}
+        <div className="mt-12 border-t border-border pt-8">
+          <p className="text-xs text-muted-foreground">
+            &copy; {new Date().getFullYear()} AMA Global Foods. All rights reserved.
           </p>
         </div>
       </div>

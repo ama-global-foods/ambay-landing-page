@@ -12,9 +12,9 @@ export default function Card({
   hover = false,
 }: CardProps) {
   const baseStyles =
-    'rounded-lg bg-white border border-gray-200 p-6 transition-all duration-150'
+    'rounded-sm bg-background border border-border p-6 transition-all duration-200'
   const hoverStyles = hover
-    ? 'hover:shadow-md hover:border-deep-teal/20 cursor-pointer'
+    ? 'hover:shadow-lg hover:border-primary/20 hover:-translate-y-1 cursor-pointer'
     : ''
 
   return (

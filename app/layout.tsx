@@ -1,14 +1,33 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
+import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-serif',
+  display: 'swap',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
-  title: 'Ambay | From Ground to Global',
+  title: 'Ambay | Better. Than. Popcorn.',
   description:
-    'Ambay is the house brand of AMA Global Foods, delivering premium pantry staples and modern snack formats to retailers and foodservice partners.',
+    'An ancient superfood, popped for modern cravings. Ambay delivers premium popped lotus seeds and pantry staples to retailers worldwide.',
   keywords:
-    'wholesale distribution, food trading, makhana, pantry staples, AMA Global Foods',
+    'makhana, popped lotus seeds, healthy snacks, superfood, wholesale distribution, AMA Global Foods, plant-based snacks',
+}
+
+export const viewport: Viewport = {
+  themeColor: '#faf5ef',
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
@@ -17,10 +36,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${playfairDisplay.variable} ${inter.variable} antialiased`}
+    >
       <body>
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

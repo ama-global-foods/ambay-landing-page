@@ -34,8 +34,6 @@ export default function ContactPage() {
     setIsSubmitting(true)
     setSubmitStatus('idle')
 
-    // Simulate form submission
-    // In production, this would send to your API/email service
     try {
       await new Promise(resolve => setTimeout(resolve, 1000))
       setSubmitStatus('success')
@@ -47,7 +45,7 @@ export default function ContactPage() {
         city: '',
         message: '',
       })
-    } catch (error) {
+    } catch {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -55,21 +53,21 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="bg-warm-cream">
+    <div className="pt-16 lg:pt-20">
       <Section className="py-20 lg:py-28">
         <div className="mx-auto max-w-2xl px-6 lg:px-8">
           {/* Header */}
           <div className="text-center">
-            <h1 className="text-4xl font-bold text-gray-900 lg:text-5xl">
+            <h1 className="font-serif text-4xl font-bold text-foreground lg:text-5xl">
               Wholesale Inquiry
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               Tell us about your business and product requirements.
             </p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="mt-12 space-y-6">
+          <form onSubmit={handleSubmit} className="mt-12 flex flex-col gap-6">
             <div className="grid gap-6 sm:grid-cols-2">
               <Input
                 label="Name"
@@ -127,14 +125,13 @@ export default function ContactPage() {
 
             {/* Submit Status */}
             {submitStatus === 'success' && (
-              <div className="rounded-md bg-green-50 p-4 text-sm text-green-800">
-                Thank you for your inquiry. We'll respond within 1-2 business
-                days.
+              <div className="rounded-sm bg-green-50 p-4 text-sm text-green-800">
+                Thank you for your inquiry. We will respond within 1-2 business days.
               </div>
             )}
 
             {submitStatus === 'error' && (
-              <div className="rounded-md bg-red-50 p-4 text-sm text-red-800">
+              <div className="rounded-sm bg-red-50 p-4 text-sm text-red-800">
                 There was an error submitting your form. Please try again.
               </div>
             )}
@@ -148,8 +145,8 @@ export default function ContactPage() {
           </form>
 
           {/* Footer Note */}
-          <p className="mt-8 text-center text-sm text-gray-500">
-            We respond within 1–2 business days.
+          <p className="mt-8 text-center text-sm text-muted-foreground">
+            We respond within 1-2 business days.
           </p>
         </div>
       </Section>

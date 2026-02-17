@@ -1,71 +1,48 @@
-export interface ProductCategory {
-  id: string
-  title: string
-  items: string[]
-}
-
 export interface MakhanaFlavor {
   id: string
   name: string
+  descriptor: string
+}
+
+export interface AmbayCategory {
+  id: string
+  title: string
+  description: string
 }
 
 export const makhanaFlavors: MakhanaFlavor[] = [
-  { id: 'tangy-tomato', name: 'Tangy Tomato' },
-  { id: 'lemon-chilli', name: 'Lemon & Chilli' },
-  { id: 'cream-onion', name: 'Cream & Onion' },
-  { id: 'himalayan-salt', name: 'Himalayan Pink Salt' },
-  { id: 'mint', name: 'Mint' },
-  { id: 'peri-peri', name: 'Peri Peri' },
+  { id: 'tangy-tomato', name: 'Tangy Tomato', descriptor: 'Bold & zesty' },
+  { id: 'lemon-chilli', name: 'Lemon & Chilli', descriptor: 'Bright & spicy' },
+  { id: 'pink-salt-pepper', name: 'Pink Salt & Pepper', descriptor: 'Classic & clean' },
+  { id: 'mint', name: 'Mint', descriptor: 'Cool & refreshing' },
+  { id: 'peri-peri', name: 'Peri-Peri', descriptor: 'Smoky & fiery' },
+  { id: 'cream-onion', name: 'Cream & Onion', descriptor: 'Rich & savory' },
 ]
 
-export const productCategories: ProductCategory[] = [
-  {
-    id: 'baking-sweeteners',
-    title: 'Baking & Sweeteners',
-    items: ['Organic cane sugar', 'Brown sugar', 'Honey', 'Maple syrup'],
-  },
-  {
-    id: 'pulses-pantry',
-    title: 'Pulses & Pantry Staples',
-    items: [
-      'Lentils (red, green, black)',
-      'Chickpeas',
-      'Black beans',
-      'Kidney beans',
-    ],
-  },
-  {
-    id: 'spices-herbs',
-    title: 'Spices & Herbs',
-    items: ['Turmeric', 'Cumin', 'Coriander', 'Garam masala'],
-  },
-  {
-    id: 'canned-ready',
-    title: 'Canned & Ready-to-Use',
-    items: [
-      'Tomato paste',
-      'Coconut milk',
-      'Curry pastes',
-      'Pickled vegetables',
-    ],
-  },
-  {
-    id: 'specialty',
-    title: 'Specialty',
-    items: ['Specialty grains', 'Ancient grains', 'Superfood powders'],
-  },
-  {
-    id: 'rice-grains',
-    title: 'Rice & Grains',
-    items: ['Basmati rice', 'Jasmine rice', 'Quinoa', 'Wild rice'],
-  },
+export const ambayCategories: AmbayCategory[] = [
+  { id: 'rice', title: 'Rice', description: 'Everyday Basmati & XXXL Extra Long Grain' },
+  { id: 'jaggery', title: 'Jaggery & Refined Jaggery', description: 'Traditional sweeteners, naturally processed' },
+  { id: 'flour', title: 'Chickpea & Maize Flour', description: 'Stone-ground, versatile baking staples' },
+  { id: 'salt', title: 'Himalayan Pink Rock Salt', description: 'Shaker & jar formats, mineral-rich' },
+  { id: 'biscuits', title: 'Whole Wheat Biscuits', description: 'Wholesome cookies & biscuits' },
+  { id: 'rusk', title: 'Rusk', description: 'Suji, Milk, and Gur varieties' },
 ]
 
-export const trustStatements = [
-  'Wholesale-focused',
-  'Reliable supply chain',
-  'Traceable sourcing',
-  'Export-ready',
-  'Private label capabilities',
-  'Global distribution network',
+export const whyAmbayCredentials = [
+  'Costco-audited production facility',
+  'Food safety certifications completed',
+  'HACCP in progress',
+  'Robust global supply network',
+  'Export-ready operations',
+  'Private & white label available',
+  'Strong margins for retail partners',
+]
+
+export const cleanCrunchBenefits = [
+  'Light, popped, better-for-you alternative to fried snacks',
+  'Differentiated shelf presence',
+  'Premium perception, strong margins',
+  'Clean label friendly',
+  'Drives repeat purchases',
+  'Flexible placement across snack, health, and specialty aisles',
 ]
