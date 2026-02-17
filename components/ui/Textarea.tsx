@@ -16,15 +16,15 @@ export default function Textarea({
       {label && (
         <label
           htmlFor={props.id}
-          className="mb-2 block text-sm font-medium text-gray-700"
+          className="mb-2 block text-sm font-medium text-foreground"
         >
           {label}
-          {props.required && <span className="ml-1 text-deep-teal">*</span>}
+          {props.required && <span className="ml-1 text-primary">*</span>}
         </label>
       )}
       <textarea
-        className={`min-h-[120px] w-full resize-y rounded-md border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 placeholder-gray-400 transition-colors focus:border-deep-teal focus:outline-none focus:ring-2 focus:ring-deep-teal focus:ring-offset-0 ${
-          error ? 'border-red-500 focus:border-red-500 focus:ring-red-500' : ''
+        className={`min-h-[120px] w-full resize-y rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/20 ${
+          error ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : ''
         } ${className}`}
         {...props}
       />
