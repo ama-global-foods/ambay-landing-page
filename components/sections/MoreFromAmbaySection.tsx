@@ -6,40 +6,40 @@ import Section from '@/components/ui/Section'
 const categories = [
   {
     title: 'Basmati Rice',
-    image: '/images/catalog-rice.png',
+    image: '/images/rice-basmati.png',
     subtitle: 'Everyday & XXXL Extra Long Grain',
   },
   {
     title: 'Whole Wheat Biscuits',
-    image: '/images/catalog-cookies.png',
+    image: '/images/cookies-punjabi-atta.png',
     subtitle: 'Punjabi & Suji Atta varieties',
   },
   {
-    title: 'Himalayan Pink Salt',
-    image: '/images/catalog-salt.png',
-    subtitle: 'Fine grain & shaker formats',
+    title: 'All Purpose Flour',
+    image: '/images/flour-all-purpose.png',
+    subtitle: 'Premium quality for all your baking needs',
   },
 ]
 
 export default function MoreFromAmbaySection() {
   return (
     <Section className="bg-background">
-      <div className="text-center mb-16">
-        <p className="text-xs font-sans uppercase tracking-[0.3em] text-muted-foreground mb-4">
+      <div className="mb-16 text-center">
+        <p className="mb-4 font-sans text-xs uppercase tracking-[0.3em] text-muted-foreground">
           Beyond the Snack Aisle
         </p>
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground text-balance">
+        <h2 className="text-balance font-serif text-4xl text-foreground md:text-5xl lg:text-6xl">
           More from Ambay
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
-        {categories.map((category) => (
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-3 lg:gap-14">
+        {categories.map(category => (
           <div
             key={category.title}
-            className="flex flex-col items-center group"
+            className="group flex cursor-pointer flex-col items-center"
           >
-            <div className="relative w-full aspect-[4/3] mb-6 transition-transform duration-500 group-hover:scale-[1.02]">
+            <div className="relative mb-6 aspect-[4/3] w-full transition-all duration-500 group-hover:scale-[1.05] group-hover:drop-shadow-xl">
               <Image
                 src={category.image}
                 alt={category.title}
@@ -48,10 +48,10 @@ export default function MoreFromAmbaySection() {
                 sizes="(max-width: 768px) 100vw, 33vw"
               />
             </div>
-            <h3 className="font-serif text-xl md:text-2xl text-foreground text-center">
+            <h3 className="text-center font-serif text-xl text-foreground transition-colors duration-300 group-hover:text-primary md:text-2xl">
               {category.title}
             </h3>
-            <p className="mt-2 text-sm text-muted-foreground text-center">
+            <p className="mt-2 text-center text-sm text-muted-foreground">
               {category.subtitle}
             </p>
           </div>

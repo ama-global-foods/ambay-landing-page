@@ -44,14 +44,14 @@ export default function Section({
     <section
       ref={ref}
       id={id}
-      className={`py-24 lg:py-32 transition-all duration-700 ease-out ${
+      className={`py-24 transition-all duration-700 ease-out lg:py-32 ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       } ${className}`}
     >
-      {fullWidth ? children : (
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          {children}
-        </div>
+      {fullWidth ? (
+        children
+      ) : (
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">{children}</div>
       )}
     </section>
   )

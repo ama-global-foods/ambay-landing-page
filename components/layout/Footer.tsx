@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Footer() {
   return (
     <footer className="border-t border-border bg-card">
@@ -5,9 +7,15 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <span className="font-serif text-xl font-bold tracking-tight text-foreground">
-              AMBAY
-            </span>
+            <div className="relative mb-3 h-8 w-20">
+              <Image
+                src="/images/ambay-logo.png"
+                alt="Ambay"
+                fill
+                className="object-contain opacity-80"
+                sizes="80px"
+              />
+            </div>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               A house brand of AMA Global Foods. From ground to global.
             </p>
@@ -64,7 +72,8 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-12 border-t border-border pt-8">
           <p className="text-xs text-muted-foreground">
-            &copy; {new Date().getFullYear()} AMA Global Foods. All rights reserved.
+            &copy; {new Date().getFullYear()} AMA Global Foods. All rights
+            reserved.
           </p>
         </div>
       </div>

@@ -53,7 +53,7 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="pt-16 lg:pt-20">
+    <div className="pt-20 lg:pt-24">
       <Section className="py-20 lg:py-28">
         <div className="mx-auto max-w-2xl px-6 lg:px-8">
           {/* Header */}
@@ -126,7 +126,8 @@ export default function ContactPage() {
             {/* Submit Status */}
             {submitStatus === 'success' && (
               <div className="rounded-sm bg-green-50 p-4 text-sm text-green-800">
-                Thank you for your inquiry. We will respond within 1-2 business days.
+                Thank you for your inquiry. We will respond within 1-2 business
+                days.
               </div>
             )}
 

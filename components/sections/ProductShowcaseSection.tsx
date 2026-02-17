@@ -7,28 +7,28 @@ import { makhanaFlavors } from '@/content/products'
 export default function ProductShowcaseSection() {
   return (
     <Section id="products" className="bg-background">
-      <div className="text-center mb-16">
-        <p className="text-xs font-sans uppercase tracking-[0.3em] text-muted-foreground mb-4">
+      <div className="mb-16 text-center">
+        <p className="mb-4 font-sans text-xs uppercase tracking-[0.3em] text-muted-foreground">
           Six Flavors. One Mission.
         </p>
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground text-balance leading-tight">
+        <h2 className="text-balance font-serif text-4xl leading-tight text-foreground md:text-5xl lg:text-6xl">
           Find your favorite crunch
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
-        {makhanaFlavors.map((flavor) => (
+      <div className="mx-auto grid max-w-5xl grid-cols-2 gap-8 md:grid-cols-3 lg:gap-12">
+        {makhanaFlavors.map(flavor => (
           <div key={flavor.name} className="group flex flex-col items-center">
-            <div className="relative w-full aspect-[3/4] mb-5 transition-transform duration-500 group-hover:scale-[1.03]">
+            <div className="relative mb-5 aspect-[3/4] w-full transition-all duration-500 group-hover:scale-[1.03] group-hover:drop-shadow-xl">
               <Image
                 src={flavor.image}
                 alt={`Ambay Popped Lotus Seeds - ${flavor.name}`}
                 fill
-                className="object-contain drop-shadow-lg"
+                className="object-contain"
                 sizes="(max-width: 768px) 50vw, 280px"
               />
             </div>
-            <h3 className="font-serif text-base md:text-lg text-foreground text-center">
+            <h3 className="text-center font-serif text-base text-foreground transition-colors duration-300 group-hover:text-primary md:text-lg">
               {flavor.name}
             </h3>
           </div>
@@ -36,10 +36,16 @@ export default function ProductShowcaseSection() {
       </div>
 
       <div className="mt-20 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-        {['Gluten Free', 'Vegan', 'Plant Based', '0% Trans Fat', 'Roasted in Olive Oil'].map((claim) => (
+        {[
+          'Gluten Free',
+          'Vegan',
+          'Plant Based',
+          '0% Trans Fat',
+          'Roasted in Olive Oil',
+        ].map(claim => (
           <span
             key={claim}
-            className="text-xs font-sans uppercase tracking-[0.2em] text-muted-foreground"
+            className="font-sans text-xs uppercase tracking-[0.2em] text-muted-foreground"
           >
             {claim}
           </span>
