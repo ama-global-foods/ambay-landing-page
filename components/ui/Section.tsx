@@ -1,6 +1,6 @@
 'use client'
 
-import { ReactNode, useRef, useEffect, useState } from 'react'
+import { type ReactNode, useRef, useEffect, useState } from 'react'
 
 interface SectionProps {
   children: ReactNode
@@ -16,23 +16,37 @@ export default function Section({
   id,
 }: SectionProps) {
   const ref = useRef<HTMLElement>(null)
-  const [isVisible, setIsVisible] = useState(!fadeIn)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    if (!fadeIn) return
+    if (!fadeIn) {
+      setIsVisible(true)
+      return
+    }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.unobserve(entry.target)
-        }
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-    )
+    // Small delay to ensure element is mounted
+    const timer = setTimeout(() => {
+      if (!ref.current) {
+        setIsVisible(true)
+        return
+      }
 
-    if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+            observer.unobserve(entry.target)
+          }
+        },
+        { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
+      )
+
+      observer.observe(ref.current)
+
+      return () => observer.disconnect()
+    }, 50)
+
+    return () => clearTimeout(timer)
   }, [fadeIn])
 
   return (
