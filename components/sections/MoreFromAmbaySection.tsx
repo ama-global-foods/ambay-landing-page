@@ -6,18 +6,18 @@ import Section from '@/components/ui/Section'
 const categories = [
   {
     title: 'Basmati Rice',
-    image: '/images/rice-basmati.png',
+    image: '/images/catalog-rice.png',
     subtitle: 'Everyday & XXXL Extra Long Grain',
   },
   {
     title: 'Whole Wheat Biscuits',
-    image: '/images/cookies-punjabi-atta.png',
+    image: '/images/catalog-cookies.png',
     subtitle: 'Punjabi & Suji Atta varieties',
   },
   {
-    title: 'All Purpose Flour',
-    image: '/images/flour-all-purpose.png',
-    subtitle: 'Premium quality for all your baking needs',
+    title: 'Himalayan Pink Salt',
+    image: '/images/catalog-salt.png',
+    subtitle: 'Fine grain & shaker formats',
   },
 ]
 
