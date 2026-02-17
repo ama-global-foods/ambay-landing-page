@@ -2,6 +2,8 @@ export interface MakhanaFlavor {
   id: string
   name: string
   descriptor: string
+  image: string
+  color: string
 }
 
 export interface AmbayCategory {
@@ -11,12 +13,12 @@ export interface AmbayCategory {
 }
 
 export const makhanaFlavors: MakhanaFlavor[] = [
-  { id: 'tangy-tomato', name: 'Tangy Tomato', descriptor: 'Bold & zesty' },
-  { id: 'lemon-chilli', name: 'Lemon & Chilli', descriptor: 'Bright & spicy' },
-  { id: 'pink-salt-pepper', name: 'Pink Salt & Pepper', descriptor: 'Classic & clean' },
-  { id: 'mint', name: 'Mint', descriptor: 'Cool & refreshing' },
-  { id: 'peri-peri', name: 'Peri-Peri', descriptor: 'Smoky & fiery' },
-  { id: 'cream-onion', name: 'Cream & Onion', descriptor: 'Rich & savory' },
+  { id: 'tangy-tomato', name: 'Tangy Tomato', descriptor: 'Bold & zesty', image: '/images/makhana-tangy-tomato.jpg', color: '#e85d3a' },
+  { id: 'lemon-chilli', name: 'Lemon & Chilli', descriptor: 'Bright & spicy', image: '/images/makhana-lemon-chilli.jpg', color: '#c9b23d' },
+  { id: 'pink-salt-pepper', name: 'Pink Salt & Pepper', descriptor: 'Classic & clean', image: '/images/makhana-pink-salt.jpg', color: '#c1889b' },
+  { id: 'mint', name: 'Mint', descriptor: 'Cool & refreshing', image: '/images/makhana-mint.jpg', color: '#6b9e3d' },
+  { id: 'peri-peri', name: 'Peri-Peri', descriptor: 'Smoky & fiery', image: '/images/makhana-peri-peri.jpg', color: '#8e2d4e' },
+  { id: 'cream-onion', name: 'Cream & Onion', descriptor: 'Rich & savory', image: '/images/makhana-cream-onion.jpg', color: '#98a819' },
 ]
 
 export const ambayCategories: AmbayCategory[] = [
@@ -36,13 +38,4 @@ export const whyAmbayCredentials = [
   'Export-ready operations',
   'Private & white label available',
   'Strong margins for retail partners',
-]
-
-export const cleanCrunchBenefits = [
-  'Light, popped, better-for-you alternative to fried snacks',
-  'Differentiated shelf presence',
-  'Premium perception, strong margins',
-  'Clean label friendly',
-  'Drives repeat purchases',
-  'Flexible placement across snack, health, and specialty aisles',
 ]
