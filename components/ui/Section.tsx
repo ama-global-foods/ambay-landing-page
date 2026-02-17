@@ -16,37 +16,32 @@ export default function Section({
   id,
 }: SectionProps) {
   const ref = useRef<HTMLElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(!fadeIn)
 
   useEffect(() => {
-    if (!fadeIn) {
+    if (!fadeIn) return
+
+    const el = ref.current
+    if (!el) {
       setIsVisible(true)
       return
     }
 
-    // Small delay to ensure element is mounted
-    const timer = setTimeout(() => {
-      if (!ref.current) {
-        setIsVisible(true)
-        return
-      }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.unobserve(entry.target)
+        }
+      },
+      { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
+    )
 
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true)
-            observer.unobserve(entry.target)
-          }
-        },
-        { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
-      )
+    observer.observe(el)
 
-      observer.observe(ref.current)
-
-      return () => observer.disconnect()
-    }, 50)
-
-    return () => clearTimeout(timer)
+    return () => {
+      observer.disconnect()
+    }
   }, [fadeIn])
 
   return (
