@@ -16,19 +16,19 @@ export default function ProductShowcaseSection() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 lg:gap-10 max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
         {makhanaFlavors.map((flavor) => (
           <div key={flavor.name} className="group flex flex-col items-center">
-            <div className="relative w-full aspect-[3/4] rounded-2xl overflow-hidden bg-muted mb-4 transition-transform duration-500 group-hover:scale-[1.02]">
+            <div className="relative w-full aspect-[3/4] mb-5 transition-transform duration-500 group-hover:scale-[1.03]">
               <Image
                 src={flavor.image}
                 alt={`Ambay Popped Lotus Seeds - ${flavor.name}`}
                 fill
-                className="object-cover"
-                sizes="(max-width: 768px) 50vw, 33vw"
+                className="object-contain drop-shadow-lg"
+                sizes="(max-width: 768px) 50vw, 280px"
               />
             </div>
-            <h3 className="font-serif text-lg md:text-xl text-foreground text-center">
+            <h3 className="font-serif text-base md:text-lg text-foreground text-center">
               {flavor.name}
             </h3>
           </div>

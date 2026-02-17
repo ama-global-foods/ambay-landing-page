@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
@@ -11,14 +12,16 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <svg
-              viewBox="0 0 40 40"
-              className="w-8 h-8 lg:w-9 lg:h-9 text-primary"
-              fill="currentColor"
-            >
-              <path d="M20 2C11 2 4 9 4 18c0 4.5 2 8.5 5 11.5V35c0 1.7 1.3 3 3 3h6v-6h4v6h6c1.7 0 3-1.3 3-3v-5.5c3-3 5-7 5-11.5 0-9-7-16-16-16zm-4 28h8v-8h-8v8z" />
-            </svg>
+          <Link href="/" className="flex items-center gap-3">
+            <div className="relative h-9 w-9 lg:h-10 lg:w-10">
+              <Image
+                src="/images/ambay-logo.png"
+                alt="Ambay"
+                fill
+                className="object-contain"
+                sizes="40px"
+              />
+            </div>
             <span className="font-serif text-lg font-bold tracking-tight text-foreground lg:text-xl">
               AMBAY
             </span>
@@ -27,19 +30,13 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-8 md:flex">
             <Link
-              href="#products"
-              className="text-sm font-medium tracking-wide text-muted-foreground transition-colors duration-200 hover:text-foreground"
-            >
-              Products
-            </Link>
-            <Link
               href="#about"
               className="text-sm font-medium tracking-wide text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               About
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center justify-center rounded-sm bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors duration-200 hover:bg-primary/90"
             >
               Wholesale Inquiry
@@ -73,13 +70,6 @@ export default function Header() {
         <div className="border-t border-border bg-background md:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6">
             <Link
-              href="#products"
-              onClick={() => setMobileOpen(false)}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Products
-            </Link>
-            <Link
               href="#about"
               onClick={() => setMobileOpen(false)}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
@@ -87,7 +77,7 @@ export default function Header() {
               About
             </Link>
             <Link
-              href="#contact"
+              href="/contact"
               onClick={() => setMobileOpen(false)}
               className="inline-flex w-full items-center justify-center rounded-sm bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
             >

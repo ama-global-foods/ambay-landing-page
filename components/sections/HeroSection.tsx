@@ -10,8 +10,8 @@ export default function HeroSection() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Content */}
           <div className="flex flex-col items-start">
-            <p className="animate-fade-in text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
-              An ancient superfood, reimagined
+            <p className="animate-fade-in text-xs font-medium uppercase tracking-[0.2em] text-primary">
+              Better. Than. Popcorn.
             </p>
 
             <h1 className="animate-fade-in-delay-1 mt-6 font-serif text-5xl font-bold leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl xl:text-8xl">
@@ -47,14 +47,14 @@ export default function HeroSection() {
             </p>
           </div>
 
-          {/* Hero Image */}
-          <div className="animate-fade-in-delay-2 relative">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
+          {/* Hero Image -- popcorn-style makhana bucket */}
+          <div className="animate-fade-in-delay-2 relative flex items-center justify-center">
+            <div className="relative aspect-square w-full max-w-lg">
               <Image
-                src="/images/hero-makhana.jpg"
-                alt="Ambay Popped Lotus Seeds - Better than popcorn, a premium popcorn-style snack"
+                src="/images/hero-popcorn.png"
+                alt="Ambay Popped Lotus Seeds overflowing from a classic popcorn bucket"
                 fill
-                className="object-cover"
+                className="object-contain"
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
