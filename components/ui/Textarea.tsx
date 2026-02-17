@@ -23,8 +23,10 @@ export default function Textarea({
         </label>
       )}
       <textarea
-        className={`min-h-[120px] w-full resize-y rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/20 ${
-          error ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20' : ''
+        className={`min-h-[120px] w-full resize-y rounded-sm border border-border bg-background px-4 py-3 text-sm text-foreground transition-colors placeholder:text-muted-foreground focus:border-ring focus:outline-none focus:ring-2 focus:ring-ring/20 ${
+          error
+            ? 'border-red-500 focus:border-red-500 focus:ring-red-500/20'
+            : ''
         } ${className}`}
         {...props}
       />

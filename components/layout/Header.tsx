@@ -10,27 +10,28 @@ export default function Header() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between lg:h-20">
+        <div className="flex h-20 items-center justify-between lg:h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="relative h-9 w-9 lg:h-10 lg:w-10">
+          <Link
+            href="/"
+            className="flex items-center transition-opacity duration-200 hover:opacity-80"
+          >
+            <div className="relative h-16 w-64 lg:h-20 lg:w-80">
               <Image
                 src="/images/ambay-logo.png"
                 alt="Ambay"
                 fill
-                className="object-contain"
-                sizes="40px"
+                className="object-contain object-left"
+                sizes="320px"
+                priority
               />
             </div>
-            <span className="font-serif text-lg font-bold tracking-tight text-foreground lg:text-xl">
-              AMBAY
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden items-center gap-8 md:flex">
             <Link
-              href="#about"
+              href="/#about"
               className="text-sm font-medium tracking-wide text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               About
@@ -70,7 +71,7 @@ export default function Header() {
         <div className="border-t border-border bg-background md:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6">
             <Link
-              href="#about"
+              href="/#about"
               onClick={() => setMobileOpen(false)}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >

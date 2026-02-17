@@ -4,19 +4,25 @@
 
 @layer base {
   :root {
-    --background: 38 50% 97%;
-    --foreground: 20 10% 15%;
-    --card: 38 40% 95%;
-    --card-foreground: 20 10% 15%;
+    /* Brand Colors - Ambay */
+    /* Light mint green background: #F0F5F2 */
+    --background: 150 30% 96%;
+    /* Dark text: #1a1a1a */
+    --foreground: 0 0% 10%;
+    --card: 150 25% 98%;
+    --card-foreground: 0 0% 10%;
+    /* Primary red: #D9362B */
     --primary: 4 72% 40%;
-    --primary-foreground: 38 50% 97%;
-    --secondary: 32 30% 90%;
-    --secondary-foreground: 20 10% 25%;
-    --muted: 32 20% 92%;
-    --muted-foreground: 20 8% 45%;
-    --accent: 4 72% 40%;
-    --accent-foreground: 38 50% 97%;
-    --border: 32 15% 88%;
+    --primary-foreground: 0 0% 98%;
+    /* Tan/Beige: #C7A77B */
+    --secondary: 32 35% 70%;
+    --secondary-foreground: 0 0% 15%;
+    --muted: 150 20% 94%;
+    --muted-foreground: 0 0% 40%;
+    /* Accent orange: #F27B21 */
+    --accent: 24 88% 54%;
+    --accent-foreground: 0 0% 98%;
+    --border: 150 15% 90%;
     --ring: 4 72% 40%;
     --radius: 0.5rem;
   }
@@ -35,7 +41,12 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-serif);
   }
 }
@@ -61,6 +72,27 @@
     }
   }
 
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Section fade-in on scroll */
+  @keyframes sectionFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .section-enter {
+    animation: sectionFadeIn 0.8s ease-out forwards;
+  }
+
   .animate-fade-in {
     animation: fadeInUp 0.7s ease-out forwards;
   }
@@ -78,6 +110,23 @@
   .animate-fade-in-delay-3 {
     animation: fadeInUp 0.7s ease-out 0.45s forwards;
     opacity: 0;
+  }
+
+  /* Smooth transitions for interactive elements */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    transition:
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
   }
 }
 
