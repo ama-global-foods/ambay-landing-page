@@ -11,8 +11,15 @@ export default function Header() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <span className="font-serif text-xl font-bold tracking-tight text-foreground lg:text-2xl">
+          <Link href="/" className="flex items-center gap-2">
+            <svg
+              viewBox="0 0 40 40"
+              className="w-8 h-8 lg:w-9 lg:h-9 text-primary"
+              fill="currentColor"
+            >
+              <path d="M20 2C11 2 4 9 4 18c0 4.5 2 8.5 5 11.5V35c0 1.7 1.3 3 3 3h6v-6h4v6h6c1.7 0 3-1.3 3-3v-5.5c3-3 5-7 5-11.5 0-9-7-16-16-16zm-4 28h8v-8h-8v8z" />
+            </svg>
+            <span className="font-serif text-lg font-bold tracking-tight text-foreground lg:text-xl">
               AMBAY
             </span>
           </Link>

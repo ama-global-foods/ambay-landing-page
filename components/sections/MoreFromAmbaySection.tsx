@@ -1,19 +1,29 @@
 'use client'
 
+import Image from 'next/image'
 import Section from '@/components/ui/Section'
 
 const categories = [
-  { title: 'Basmati Rice', description: 'Everyday and XXXL Extra Long Grain varieties in 8lb and 10lb formats.' },
-  { title: 'Jaggery & Refined Jaggery', description: 'Traditional unrefined sweeteners for baking, cooking, and wellness use.' },
-  { title: 'Chickpea & Maize Flour', description: 'Besan and Makki Atta for authentic cooking and gluten-conscious consumers.' },
-  { title: 'Himalayan Pink Salt', description: 'Available in shaker and jar formats for retail and foodservice.' },
-  { title: 'Whole Wheat Biscuits', description: 'Combo cookies, Punjabi atta biscuits, and semolina biscuits.' },
-  { title: 'Rusk Collection', description: 'Suji, Milk, Gur, and Combo Rusk for the perfect chai accompaniment.' },
+  {
+    title: 'Basmati Rice',
+    image: '/images/ambay-rice.jpg',
+    subtitle: 'Everyday & XXXL Extra Long Grain'
+  },
+  {
+    title: 'Whole Wheat Biscuits',
+    image: '/images/ambay-cookies.jpg',
+    subtitle: 'Punjabi & Suji Atta varieties'
+  },
+  {
+    title: 'Himalayan Pink Salt',
+    image: '/images/ambay-salt.jpg',
+    subtitle: 'Fine grain & shaker formats'
+  },
 ]
 
 export default function MoreFromAmbaySection() {
   return (
-    <Section className="bg-card">
+    <Section className="bg-background">
       <div className="text-center mb-16">
         <p className="text-xs font-sans uppercase tracking-[0.3em] text-muted-foreground mb-4">
           Beyond the Snack Aisle
@@ -21,22 +31,28 @@ export default function MoreFromAmbaySection() {
         <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-foreground text-balance">
           More from Ambay
         </h2>
-        <p className="mt-4 text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
-          Premium pantry staples for wholesale distribution, all under one trusted brand.
-        </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
         {categories.map((category) => (
           <div
             key={category.title}
-            className="bg-card p-8 md:p-10 flex flex-col"
+            className="flex flex-col items-center group"
           >
-            <h3 className="font-serif text-xl md:text-2xl text-foreground">
+            <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-muted mb-6 transition-transform duration-500 group-hover:scale-[1.02]">
+              <Image
+                src={category.image}
+                alt={category.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+            <h3 className="font-serif text-xl md:text-2xl text-foreground text-center">
               {category.title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              {category.description}
+            <p className="mt-2 text-sm text-muted-foreground text-center">
+              {category.subtitle}
             </p>
           </div>
         ))}

@@ -15,11 +15,11 @@ export default function HeroSection() {
             </p>
 
             <h1 className="animate-fade-in-delay-1 mt-6 font-serif text-5xl font-bold leading-[1.05] tracking-tight text-foreground md:text-6xl lg:text-7xl xl:text-8xl">
-              <span className="text-balance">Better.</span>
+              <span className="text-balance">Not popcorn.</span>
               <br />
-              <span className="text-balance">Than.</span>
+              <span className="text-balance">Not chips.</span>
               <br />
-              <span className="text-balance text-primary">Popcorn.</span>
+              <span className="text-balance text-primary">A new staple.</span>
             </h1>
 
             <p className="animate-fade-in-delay-2 mt-8 max-w-md text-lg leading-relaxed text-muted-foreground lg:text-xl">
@@ -51,8 +51,8 @@ export default function HeroSection() {
           <div className="animate-fade-in-delay-2 relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-sm">
               <Image
-                src="/images/makhana-hero.jpg"
-                alt="Ambay Popped Lotus Seeds - premium makhana in a wellness-forward composition"
+                src="/images/hero-makhana.jpg"
+                alt="Ambay Popped Lotus Seeds - Better than popcorn, a premium popcorn-style snack"
                 fill
                 className="object-cover"
                 priority
